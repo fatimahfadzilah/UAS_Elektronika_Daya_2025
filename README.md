@@ -1,1 +1,1 @@
-# UAS_Elektronika_Daya_2025
+# UAS Elektronika Daya 2025
