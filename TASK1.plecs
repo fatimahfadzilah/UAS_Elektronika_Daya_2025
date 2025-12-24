@@ -28,9 +28,9 @@ Plecs {
   AlgebraicLoopWithStateMachineMsg "3"
   AssertionAction "1"
   FixedPointDatatypeOverride "1"
-  InitializationCommands "% Plant parameters\nVdc = 12;\nVout= 5;\nCout =15e-6"
-";\nRc= 7.5e-3;\nL= 60e-6;\n\n\n%fsw= 100e3;          % Switching frequency in"
-" Hz\n%td= 20e-9;           % dead-time in s\n\n"
+  InitializationCommands "% Plant parameters\nVdc = 48;\nVout= 24;\nCout =15e-"
+"6;\nRc= 7.5e-3;\nL= 100e-3;\n\n\n%fsw= 100e3;          % Switching frequency "
+"in Hz\n%td= 20e-9;           % dead-time in s\n\n"
   InitialState  "1"
   SystemState   ""
   TaskingMode   "1"
@@ -55,30 +55,30 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 23; 1536, 773]
+    Location      [0, 26; 1536, 776]
     ZoomFactor    1
     SliderPosition [0, 0]
     ShowBrowser   off
     BrowserWidth  100
     Component {
       Type          Resistor
-      Name          "Fixed\nLoad"
+      Name          "Fixed\nLoad1"
       Show          on
-      Position      [735, 270]
+      Position      [795, 295]
       Direction     up
       Flipped       off
       LabelPosition east
       Parameter {
         Variable      "R"
-        Value         "1"
+        Value         "1000"
         Show          on
       }
     }
     Component {
       Type          Inductor
-      Name          "L1"
+      Name          "L2"
       Show          off
-      Position      [585, 210]
+      Position      [645, 235]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -94,47 +94,28 @@ Plecs {
       }
     }
     Component {
-      Type          Capacitor
-      Name          "Cout"
-      Show          off
-      Position      [700, 250]
-      Direction     down
-      Flipped       on
-      LabelPosition west
-      Parameter {
-        Variable      "C"
-        Value         "Cout"
-        Show          on
-      }
-      Parameter {
-        Variable      "v_init"
-        Value         "0"
-        Show          off
-      }
-    }
-    Component {
       Type          Ammeter
-      Name          "Am1"
+      Name          "Am2"
       Show          off
-      Position      [675, 210]
+      Position      [735, 235]
       Direction     left
       Flipped       off
       LabelPosition south
     }
     Component {
       Type          Voltmeter
-      Name          "Vm1"
+      Name          "Vm2"
       Show          off
-      Position      [875, 255]
+      Position      [935, 280]
       Direction     up
       Flipped       off
       LabelPosition west
     }
     Component {
       Type          Scope
-      Name          "Scope"
+      Name          "Scope1"
       Show          on
-      Position      [955, 250]
+      Position      [1015, 275]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -213,9 +194,9 @@ Plecs {
     }
     Component {
       Type          MosfetWithDiode
-      Name          "FETD1"
+      Name          "FETD3"
       Show          off
-      Position      [545, 170]
+      Position      [605, 195]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -247,9 +228,9 @@ Plecs {
     }
     Component {
       Type          MosfetWithDiode
-      Name          "FETD2"
+      Name          "FETD4"
       Show          off
-      Position      [545, 250]
+      Position      [605, 275]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -281,9 +262,9 @@ Plecs {
     }
     Component {
       Type          DCVoltageSource
-      Name          "V_dc"
+      Name          "V_dc1"
       Show          off
-      Position      [390, 225]
+      Position      [450, 250]
       Direction     down
       Flipped       on
       LabelPosition east
@@ -295,17 +276,17 @@ Plecs {
     }
     Component {
       Type          Scope
-      Name          "Switch\nPattern"
+      Name          "Switch\nPattern1"
       Show          on
-      Position      [955, 145]
+      Position      [1015, 175]
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [674, 58; 1200, 518]
+      Location      [674, 58; 1200, 572]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAAA8PwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAIYA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwIAAATYAA"
 "AByAAAAMgAAAB4+wAAAAwAVAByAGEAYwBlAHMAAAAAAAAAAPAAAABoAP///wAAAAMAAAHnAAAAXPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAAecAAABQAP///wAAAg4AAAGxAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAAecAAABQAP///wAAAg4AAAHnAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
@@ -398,28 +379,28 @@ Plecs {
     }
     Component {
       Type          PlecsProbe
-      Name          "Probe"
+      Name          "Probe1"
       Show          off
-      Position      [875, 145]
+      Position      [935, 170]
       Direction     right
       Flipped       off
       LabelPosition south
       Probe {
-        Component     "FETD1"
+        Component     "FETD3"
         Path          ""
         Signals       {"Device gate input"}
       }
       Probe {
-        Component     "FETD2"
+        Component     "FETD4"
         Path          ""
         Signals       {"Device gate input"}
       }
     }
     Component {
       Type          SignalDemux
-      Name          "Demux"
+      Name          "Demux1"
       Show          off
-      Position      [920, 145]
+      Position      [980, 170]
       Direction     right
       Flipped       on
       LabelPosition south
@@ -431,9 +412,9 @@ Plecs {
     }
     Component {
       Type          Resistor
-      Name          "Rl"
+      Name          "Rl1"
       Show          off
-      Position      [630, 210]
+      Position      [690, 235]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -444,24 +425,10 @@ Plecs {
       }
     }
     Component {
-      Type          Resistor
-      Name          "Rc_esr"
-      Show          off
-      Position      [700, 295]
-      Direction     up
-      Flipped       off
-      LabelPosition east
-      Parameter {
-        Variable      "R"
-        Value         "Rc"
-        Show          off
-      }
-    }
-    Component {
       Type          LogicalOperator
-      Name          "Logical\nOperator"
+      Name          "Logical\nOperator1"
       Show          on
-      Position      [640, 480]
+      Position      [735, 425]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -478,15 +445,15 @@ Plecs {
     }
     Component {
       Type          Goto
-      Name          "Goto"
+      Name          "Goto2"
       Show          off
-      Position      [690, 435]
+      Position      [785, 380]
       Direction     right
       Flipped       off
       LabelPosition south
       Parameter {
         Variable      "Tag"
-        Value         "SH"
+        Value         "SH1"
         Show          off
       }
       Parameter {
@@ -502,15 +469,15 @@ Plecs {
     }
     Component {
       Type          Goto
-      Name          "Goto1"
+      Name          "Goto3"
       Show          off
-      Position      [690, 480]
+      Position      [785, 425]
       Direction     right
       Flipped       off
       LabelPosition south
       Parameter {
         Variable      "Tag"
-        Value         "SL"
+        Value         "SL1"
         Show          off
       }
       Parameter {
@@ -526,9 +493,9 @@ Plecs {
     }
     Component {
       Type          PulseGenerator
-      Name          "Pulse\nGenerator"
+      Name          "Pulse\nGenerator1"
       Show          on
-      Position      [480, 480]
+      Position      [575, 425]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -549,7 +516,7 @@ Plecs {
       }
       Parameter {
         Variable      "DutyCycle"
-        Value         "0.4167"
+        Value         "0.5"
         Show          off
       }
       Parameter {
@@ -565,15 +532,15 @@ Plecs {
     }
     Component {
       Type          From
-      Name          "From"
+      Name          "From2"
       Show          off
-      Position      [495, 170]
+      Position      [555, 195]
       Direction     right
       Flipped       off
       LabelPosition south
       Parameter {
         Variable      "Tag"
-        Value         "SH"
+        Value         "SH1"
         Show          off
       }
       Parameter {
@@ -589,15 +556,15 @@ Plecs {
     }
     Component {
       Type          From
-      Name          "From1"
+      Name          "From3"
       Show          off
-      Position      [495, 250]
+      Position      [555, 275]
       Direction     right
       Flipped       off
       LabelPosition south
       Parameter {
         Variable      "Tag"
-        Value         "SL"
+        Value         "SL1"
         Show          off
       }
       Parameter {
@@ -613,182 +580,160 @@ Plecs {
     }
     Connection {
       Type          Wire
-      SrcComponent  "Fixed\nLoad"
+      SrcComponent  "Fixed\nLoad1"
       SrcTerminal   2
-      Points        [735, 330]
+      Points        [795, 355]
       Branch {
-        Points        [700, 330]
+        Points        [605, 355]
         Branch {
-          DstComponent  "Rc_esr"
+          Points        [450, 355]
+          DstComponent  "V_dc1"
           DstTerminal   2
         }
         Branch {
-          Points        [545, 330]
-          Branch {
-            Points        [390, 330]
-            DstComponent  "V_dc"
-            DstTerminal   2
-          }
-          Branch {
-            DstComponent  "FETD2"
-            DstTerminal   2
-          }
+          DstComponent  "FETD4"
+          DstTerminal   2
         }
       }
       Branch {
-        Points        [875, 330]
-        DstComponent  "Vm1"
+        Points        [935, 355]
+        DstComponent  "Vm2"
         DstTerminal   2
       }
     }
     Connection {
       Type          Wire
-      SrcComponent  "Am1"
-      SrcTerminal   2
-      Points        [700, 210]
-      Branch {
-        Points        [735, 210]
-        Branch {
-          Points        [875, 210]
-          DstComponent  "Vm1"
-          DstTerminal   1
-        }
-        Branch {
-          DstComponent  "Fixed\nLoad"
-          DstTerminal   1
-        }
-      }
-      Branch {
-        DstComponent  "Cout"
-        DstTerminal   1
-      }
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "L1"
+      SrcComponent  "Vm2"
       SrcTerminal   1
-      Points        [545, 210]
+      Points        [935, 235; 795, 235]
       Branch {
-        DstComponent  "FETD1"
+        DstComponent  "Am2"
         DstTerminal   2
       }
       Branch {
-        DstComponent  "FETD2"
+        DstComponent  "Fixed\nLoad1"
         DstTerminal   1
       }
     }
     Connection {
       Type          Wire
-      SrcComponent  "V_dc"
+      SrcComponent  "L2"
       SrcTerminal   1
-      Points        [390, 125; 545, 125]
-      DstComponent  "FETD1"
+      Points        [605, 235]
+      Branch {
+        DstComponent  "FETD3"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "FETD4"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "V_dc1"
+      SrcTerminal   1
+      Points        [450, 150; 605, 150]
+      DstComponent  "FETD3"
       DstTerminal   1
     }
     Connection {
       Type          Signal
-      SrcComponent  "Demux"
+      SrcComponent  "Demux1"
       SrcTerminal   2
-      DstComponent  "Switch\nPattern"
+      DstComponent  "Switch\nPattern1"
       DstTerminal   1
     }
     Connection {
       Type          Signal
-      SrcComponent  "Demux"
+      SrcComponent  "Demux1"
       SrcTerminal   3
-      DstComponent  "Switch\nPattern"
+      DstComponent  "Switch\nPattern1"
       DstTerminal   2
     }
     Connection {
       Type          Wire
-      SrcComponent  "Am1"
+      SrcComponent  "Am2"
       SrcTerminal   1
-      DstComponent  "Rl"
+      DstComponent  "Rl1"
       DstTerminal   2
     }
     Connection {
       Type          Wire
-      SrcComponent  "Rl"
+      SrcComponent  "Rl1"
       SrcTerminal   1
-      DstComponent  "L1"
+      DstComponent  "L2"
       DstTerminal   2
     }
     Connection {
-      Type          Wire
-      SrcComponent  "Cout"
-      SrcTerminal   2
-      DstComponent  "Rc_esr"
+      Type          Signal
+      SrcComponent  "Probe1"
+      SrcTerminal   1
+      DstComponent  "Demux1"
       DstTerminal   1
     }
     Connection {
       Type          Signal
-      SrcComponent  "Probe"
-      SrcTerminal   1
-      DstComponent  "Demux"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Am1"
+      SrcComponent  "Am2"
       SrcTerminal   3
-      Points        [675, 185; 895, 185; 895, 245]
-      DstComponent  "Scope"
+      Points        [735, 210; 955, 210; 955, 270]
+      DstComponent  "Scope1"
       DstTerminal   1
     }
     Connection {
       Type          Signal
-      SrcComponent  "Logical\nOperator"
+      SrcComponent  "Logical\nOperator1"
       SrcTerminal   1
-      DstComponent  "Goto1"
+      DstComponent  "Goto3"
       DstTerminal   1
     }
     Connection {
       Type          Signal
-      SrcComponent  "From"
+      SrcComponent  "From2"
       SrcTerminal   1
-      DstComponent  "FETD1"
+      DstComponent  "FETD3"
       DstTerminal   3
     }
     Connection {
       Type          Signal
-      SrcComponent  "From1"
+      SrcComponent  "From3"
       SrcTerminal   1
-      DstComponent  "FETD2"
+      DstComponent  "FETD4"
       DstTerminal   3
     }
     Connection {
       Type          Signal
-      SrcComponent  "Pulse\nGenerator"
+      SrcComponent  "Pulse\nGenerator1"
       SrcTerminal   1
-      Points        [605, 480]
+      Points        [700, 425]
       Branch {
-        DstComponent  "Logical\nOperator"
+        DstComponent  "Logical\nOperator1"
         DstTerminal   2
       }
       Branch {
-        Points        [605, 435]
-        DstComponent  "Goto"
+        Points        [700, 380]
+        DstComponent  "Goto2"
         DstTerminal   1
       }
     }
     Connection {
       Type          Signal
-      SrcComponent  "Vm1"
+      SrcComponent  "Vm2"
       SrcTerminal   3
-      Points        [925, 255]
+      Points        [985, 280]
       Branch {
-        DstComponent  "Scope"
+        DstComponent  "Scope1"
         DstTerminal   2
       }
       Branch {
-        DstComponent  "Switch\nPattern"
+        DstComponent  "Switch\nPattern1"
         DstTerminal   3
       }
     }
     Annotation {
       Name          "<html><body>\n<p align=\"center\">Synchronous buck conver"
 "ter</p></body></html>"
-      Position      [645, 125]
+      Position      [705, 150]
     } 
   }
 }
