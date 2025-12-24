@@ -53,8 +53,8 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 23; 1536, 773]
-    ZoomFactor    0.583096
+    Location      [0, 26; 1536, 776]
+    ZoomFactor    0.763607
     SliderPosition [0, 0]
     ShowBrowser   off
     BrowserWidth  100
@@ -1079,15 +1079,15 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [1, 30; 1275, 853]
+      Location      [0, 23; 1536, 795]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAF4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGgA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABoAP///wAAAAMAAAAAAAAAAPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAABPoAAAMcAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAABgAAAALpAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":149,\"Labels\":[],"
+      HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":129,\"Labels\":[],"
 "\"VisualIdxs\":[]}"
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
 "AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
@@ -1095,29 +1095,31 @@ Plecs {
       TimeRange     "0"
       ScrollingMode "1"
       SingleTimeAxis "1"
-      Open          "0"
+      Open          "1"
       Ts            "-1"
       SampleLimit   "0"
       XAxisLabel    "Time / s"
       ShowLegend    "1"
       Axis {
-        Name          ""
+        Name          "Id"
         AutoScale     1
         MinValue      0
         MaxValue      1
         Signals       {}
         SignalTypes   [ ]
+        AxisLabel     "Ampere (A)"
         Untangle      0
         KeepBaseline  off
         BaselineValue 0
       }
       Axis {
-        Name          ""
+        Name          "Iq"
         AutoScale     1
         MinValue      0
         MaxValue      1
         Signals       {}
         SignalTypes   [ ]
+        AxisLabel     "Ampere (A)"
         Untangle      0
         KeepBaseline  off
         BaselineValue 0
@@ -3290,7 +3292,7 @@ Plecs {
       LabelPosition west
       Parameter {
         Variable      "C"
-        Value         "100e-6"
+        Value         "C"
         Show          off
       }
       Parameter {
@@ -3309,7 +3311,7 @@ Plecs {
       LabelPosition west
       Parameter {
         Variable      "C"
-        Value         "100e-6"
+        Value         "C"
         Show          off
       }
       Parameter {
@@ -3328,7 +3330,7 @@ Plecs {
       LabelPosition northwest
       Parameter {
         Variable      "C"
-        Value         "100e-6"
+        Value         "C"
         Show          off
       }
       Parameter {

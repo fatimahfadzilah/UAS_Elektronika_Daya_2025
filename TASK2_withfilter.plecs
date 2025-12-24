@@ -1,5 +1,5 @@
 Plecs {
-  Name          "withfilter"
+  Name          "TASK2_withfilter"
   Version       "4.9"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"
@@ -53,7 +53,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 23; 1536, 773]
+    Location      [0, 26; 1536, 776]
     ZoomFactor    1.14437
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -197,7 +197,7 @@ Plecs {
       Parameter {
         Variable      "R"
         Value         "10"
-        Show          off
+        Show          on
       }
     }
     Component {
@@ -485,7 +485,7 @@ Plecs {
       }
       Parameter {
         Variable      "f"
-        Value         "5000"
+        Value         "10000"
         Show          off
       }
       Parameter {
@@ -1005,8 +1005,8 @@ Plecs {
       LabelPosition north
       Parameter {
         Variable      "L"
-        Value         "2e-3"
-        Show          off
+        Value         "5e-3"
+        Show          on
       }
       Parameter {
         Variable      "i_init"
@@ -1024,7 +1024,7 @@ Plecs {
       LabelPosition north
       Parameter {
         Variable      "L"
-        Value         "2e-3"
+        Value         "5e-3"
         Show          off
       }
       Parameter {
@@ -1043,7 +1043,7 @@ Plecs {
       LabelPosition north
       Parameter {
         Variable      "L"
-        Value         "2e-3"
+        Value         "5e-3"
         Show          off
       }
       Parameter {
@@ -1062,8 +1062,8 @@ Plecs {
       LabelPosition west
       Parameter {
         Variable      "C"
-        Value         "10e-6"
-        Show          off
+        Value         "5.07e-6"
+        Show          on
       }
       Parameter {
         Variable      "v_init"
@@ -1081,7 +1081,7 @@ Plecs {
       LabelPosition west
       Parameter {
         Variable      "C"
-        Value         "10e-6"
+        Value         "5.07e-6"
         Show          off
       }
       Parameter {
@@ -1100,7 +1100,7 @@ Plecs {
       LabelPosition west
       Parameter {
         Variable      "C"
-        Value         "10e-6"
+        Value         "5.07e-6"
         Show          off
       }
       Parameter {
@@ -1113,23 +1113,25 @@ Plecs {
       Type          Scope
       Name          "Scope1"
       Show          on
-      Position      [1220, 70]
+      Position      [1255, 70]
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [769, 30; 1535, 853]
+      Location      [0, 23; 1536, 795]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
-"G0AQQByAGUAYQAAAAAA/////wAAAF4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
-"///wAAAGgA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABoAP///wAAAAMAAAL+AAAA5fw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAv4AAABQAP///wAAAv4AAAIzAAAA"
+"G0AQQByAGUAYQAAAAAA/////wAAADYA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGgA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABoAP///wAAAAMAAAYAAAAAm/w"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABgAAAABQAP///wAABgAAAAJKAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "{\"DefaultSecSize\":100,\"FirstSecSize\":220,\"Labels\":["
 "\"Delta\"],\"VisualIdxs\":[3]}"
-      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
-"AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
-      Axes          "2"
+      PlotPalettes  "AAAAAQAAAAMAAAABAAAAAwAAAAEC//8u4P//zMwAAAAAAAEC//8AAP///"
+"/8AAAAAAAEC//9PsP////8AAAAAAAMAAAABAAAAAAEAAAAAAQAAAAADAAAAAQAAAAEAAAABAAAAAQ"
+"AAAAEAAAABAAAAAwAAAAEAAAAAAQAAAAABAAAAAAMAAAABP/AAAAAAAAAAAAABP/AAAAAAAAAAAAA"
+"BP/AAAAAAAAAAAAADAAAAAQAAAAABAAAAAAEA"
+      Axes          "1"
       TimeRange     "0"
       ScrollingMode "1"
       SingleTimeAxis "1"
@@ -1139,24 +1141,14 @@ Plecs {
       XAxisLabel    "Time / s"
       ShowLegend    "1"
       Axis {
-        Name          ""
+        Name          "Output Voltage Filtered Va, Vb, Vc"
         AutoScale     1
         MinValue      0
         MaxValue      1
         Signals       {}
         SignalTypes   [ ]
+        AxisLabel     "Voltage (V)"
         Untangle      0
-        KeepBaseline  off
-        BaselineValue 0
-      }
-      Axis {
-        Name          ""
-        AutoScale     1
-        MinValue      0
-        MaxValue      1
-        Signals       {}
-        SignalTypes   [ ]
-        Untangle      1
         KeepBaseline  off
         BaselineValue 0
       }
@@ -1166,16 +1158,6 @@ Plecs {
         Scaling           0
         PhaseDisplay      0
         ShowFourierLegend off
-        Axis {
-          Name          ""
-          AutoScale     1
-          MinValue      0
-          MaxValue      1
-          Signals       {}
-          Untangle      0
-          KeepBaseline  off
-          BaselineValue 0
-        }
         Axis {
           Name          ""
           AutoScale     1
@@ -1640,7 +1622,7 @@ Plecs {
       Type          Signal
       SrcComponent  "3ph Meter1"
       SrcTerminal   7
-      Points        [1180, 65]
+      Points        [1180, 70]
       DstComponent  "Scope1"
       DstTerminal   1
     }
@@ -1648,8 +1630,7 @@ Plecs {
       Type          Signal
       SrcComponent  "3ph Meter1"
       SrcTerminal   8
-      DstComponent  "Scope1"
-      DstTerminal   2
+      Points        [1190, 75; 1205, 75]
     }
     Connection {
       Type          Wire

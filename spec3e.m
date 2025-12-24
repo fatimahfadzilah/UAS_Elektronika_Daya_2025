@@ -3,18 +3,17 @@ clear all
 
 Vdc = 800
 
-L = 0.002
+L = 0.02
 R = 1
+C = 5e-6
 Ugd = 220*sqrt(2)
 Ugq = 0
 f = 50
-theta = 0 
+theta = -30
 Ipeak = 20 
 Id = Ipeak*cosd(theta) 
 Iq = Ipeak * sind(theta)
 
-Id_ref = 20 
-Iq_ref = -6
 
 w = 2*pi*f
 Umd = -(w*L*Iq) + R*Id + Ugd

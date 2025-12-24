@@ -3,8 +3,9 @@ clear all
 
 Vdc = 800
 
-L = 0.002
+L = 0.02
 R = 1
+C = 5e-6
 Ugd = 220*sqrt(2)
 Ugq = 0
 f = 50
